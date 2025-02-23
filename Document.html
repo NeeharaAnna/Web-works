@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Document</title>
+</head>
+<body>
+<style>
+#screen{
+width:400px;
+height:400px;
+border:solid 1px
+}
+</style>
+	<div id="screen">
+	</div>
+	<button onclick="box('red')">Red</button>
+	<button onclick="box('pink')">Pink</button>
+	<button onclick="box('blue')">Blue</button>
+	<button onclick="box('green')">Green</button>
+<script>
+	function box(c)
+	{
+		document.getElementById("screen").style.background=c
+	}
+</script>
+</body>
+</html>

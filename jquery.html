@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Document</title>
+</head>
+<body>
+<button id="btn">click me</button>
+<input id="inp" type="text">
+<input id="inp" type="text">
+<div style="display:none;background-color:red;height:300px;width:300px" id="box"></div>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script>
+	$(document).ready(function(){
+	$("#btn").click(function(){
+	    //alert("Button clicked")
+	$(this).css({"background-color":"blue"})
+	$("#box").fadeToggle(2000)
+
+	})
+	$("#btn").mouseenter(function(){
+	$(this).css({"background-color":"yellow"})
+	})
+	$("#btn").mouseleave(function(){
+	$(this).css({"background-color":"white"})
+	})
+	$("#inp").blur(function(){
+	var text=$(this).val()
+	if(text.length<4)
+	{
+	alert("ENter minnimum 4 characters")
+	}
+	})
+})
+</script>
+</body>
+</html>

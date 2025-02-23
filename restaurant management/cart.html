@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Your Cart</h1>
+        <a href="index.html" class="cart-icon">🏠 Back to Menu</a>
+    </header>
+
+    <div class="cart-container">
+        <ul id="cart-items"></ul>
+        <p><strong>Total: $<span id="total-price">0.00</span></strong></p>
+        <button onclick="checkout()">Proceed to Payment</button>
+    </div>
+
+    <script>
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || {};
+            let cartList = document.getElementById("cart-items");
+            let totalPrice = 0;
+
+            cartList.innerHTML = "";
+            Object.keys(cart).forEach(id => {
+                let item = cart[id];
+                totalPrice += item.price * item.quantity;
+                cartList.innerHTML += `
+                    <li>
+                        ${item.name} (x${item.quantity}) - $${(item.price * item.quantity).toFixed(2)}
+                        <button onclick="removeFromCart(${id})">❌ Remove</button>
+                    </li>
+                `;
+            });
+
+            document.getElementById("total-price").innerText = totalPrice.toFixed(2);
+        }
+
+        function removeFromCart(id) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || {};
+            if (cart[id]) {
+                delete cart[id];
+            }
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart();
+        }
+
+        function checkout() {
+            alert("Proceeding to payment...");
+            localStorage.removeItem("cart");
+            window.location.href = "index.html";
+        }
+
+        document.addEventListener("DOMContentLoaded", loadCart);
+    </script>
+
+</body>
+</html>
+
