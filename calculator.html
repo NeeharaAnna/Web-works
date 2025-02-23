@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Document</title>
+</head>
+<body>
+<link href="calculator.css" type="text/css" rel="stylesheet">
+	<div class="main">
+	<div class="calc">
+		<div pointer-events:"none">
+	<input type="text" id="display">
+	</div>
+		<div class="buttons">
+<button onclick="clearscreen()" class="cl">Clr</button><br>
+		<div class="row">
+		<button onclick="perform(7)" class="btn">7</button>
+		<button onclick="perform(8)" class="btn">8</button>
+<button onclick="perform(9)" class="btn">9</button>
+<button onclick="perform('/')" class="btn">/</button>
+		</div>
+
+<div class="row">
+ <button onclick="perform(4)" class="btn">4</button>
+		<button onclick="perform(5)" class="btn">5</button>
+<button onclick="perform(6)" class="btn">6</button>
+<button onclick="perform('*')" class="btn">x</button>
+		</div>
+<div class="row">
+<button onclick="perform(1)" class="btn">1</button>
+		<button onclick="perform(2)" class="btn">2</button>
+<button onclick="perform(3)" class="btn">3</button>
+<button onclick="perform('+')" class="btn">+</button>
+		</div>
+<div class="last">
+		<button onclick="perform(0)" class="btn">0</button>
+<button onclick="perform('.')" class="btn">.</button>
+<button onclick="perform('-')" class="btn">-</button>
+
+<button onclick="equalclick()" class="equal">=</button>
+		</div>
+		</div>
+
+	</div>
+	</div>
+<script src="calculator.js"></script>
+
+</body>
+</html>

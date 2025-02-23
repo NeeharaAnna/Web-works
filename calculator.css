@@ -1,0 +1,44 @@
+.calc{
+	width:400px;
+	height:450px;
+	background:grey;
+	padding: 20px;
+	margin-left:350px;
+	margin-top:100px
+
+}
+#display{
+	width: 88%;
+    height: 52px;
+    background: beige;
+    margin-left: 20px;
+    margin-top: 3px;
+}
+.btn{
+	width:83px;
+	height:49px;
+	margin-top: 10px;
+}
+.equal{
+	width:83px;
+	height:49px;
+	margin-top:16px;
+	background-color:#a37710
+}
+.row{
+	margin:20px;
+	margin-top:-8px
+}
+.last{
+	
+margin: 20px;
+}
+.buttons{
+border:solid 1px;
+margin-top:20px
+}
+.cl{
+width:90px;
+height:45px;
+margin:20px
+}
